@@ -23,7 +23,7 @@ apim -right-> backend
 ```
 
 This will render the diagram as shown:
-![Getting Started](docs\getting-started.png)
+![Getting Started](docs/getting-started.png)
 
 ## Resources
 
