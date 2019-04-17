@@ -1,0 +1,1 @@
+# plantuml-azure-icons
