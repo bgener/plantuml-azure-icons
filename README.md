@@ -28,7 +28,7 @@ This will render the diagram as shown:
 
 ## Advanced example
 
-Here is a more complex example where we define re-usable components, so that we can 
+Here is a more complex example where we define re-usable components
 
 ``` bash
 skinparam monochrome true
