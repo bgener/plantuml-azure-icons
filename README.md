@@ -23,7 +23,51 @@ apim -right-> backend
 ```
 
 This will render the diagram as shown:
-![Getting Started](docs\getting-started.png)
+
+![Getting Started](docs/getting-started.png)
+
+## Advanced example
+
+Here is a more complex example where we define re-usable components, so that we can 
+
+``` bash
+skinparam monochrome true
+skinparam defaultTextAlignment center
+
+!define Url https://raw.githubusercontent.com/bgener/plantuml-azure-icons/master/images
+rectangle "<img Url/LogicApps.png>\nOrchestration Layer" as orchestration
+rectangle "<img Url/AzureAppService.png>\nMicroservice2" as service2
+
+!definelong CreateAzureFuncs(alias, caption)
+    rectangle "<img Url/AzureFunctions.png>\n...\n<img Url/AzureFunctions.png>\n caption" as alias
+!enddefinelong
+
+!definelong CreateAPIManagement(alias, caption)
+    cloud "<img Url/AzureAPIManagement.png>\n caption" as alias
+!enddefinelong
+
+!definelong CreateAzureServiceBus(alias, caption)
+    node "<img Url/AzureServiceBus.png>\n caption" as alias
+!enddefinelong
+
+CreateAPIManagement(apim, APIM)
+CreateAzureFuncs(funcs, Backend)
+CreateAzureServiceBus(servicebus, Service Bus)
+CreateAPIManagement(service1, Microservice1)
+CreateAzureFuncs(backend, Microservice1)
+
+
+apim -right-> funcs
+apim -right-> funcs
+funcs -right-> servicebus
+
+servicebus -down-> orchestration
+orchestration -> service1
+orchestration -down-> service2
+service1 -> backend
+```
+
+![Advanced example](docs\advanced-example.png)
 
 ## Resources
 
