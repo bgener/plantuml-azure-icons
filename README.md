@@ -67,7 +67,7 @@ orchestration -down-> service2
 service1 -> backend
 ```
 
-![Advanced example](docs\advanced-example.png)
+![Advanced example](docs/advanced-example.png)
 
 ## Resources
 
